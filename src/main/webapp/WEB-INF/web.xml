@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <!--
+        In earlier versions (like version 2.x) of the Java Servlet API
+        servlets, filters, etc. needed to be configured here, in the web.xml
+        file (web deployment descriptor), but since version 3.x every configuration
+        can be defined instead with annotations. For more search for information on
+        "differences between java servlet api 2 and 3", etc.
+    -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
