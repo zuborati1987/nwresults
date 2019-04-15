@@ -8,4 +8,12 @@ public class Q1pojo {
         this.productName = productName;
         this.companyName = companyName;
     }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
 }

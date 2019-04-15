@@ -36,8 +36,9 @@ public class Q4Dao extends AbstractDao {
             "FROM orders \n" +
             "left join customers\n" +
             "on orders.customer_id = customers.customer_id\n" +
+            "where company_name = ?\n" +
             "GROUP BY customers.customer_id\n" +
-            "order by company_name where company_name = ?;";
+            "order by company_name;";
 
         try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
             statement.setString(1, name);

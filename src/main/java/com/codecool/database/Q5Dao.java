@@ -32,14 +32,16 @@ public class Q5Dao extends AbstractDao {
 
 
     public List<Q5pojo> findByName(String name) throws SQLException {
+        System.out.println(name + "This is name");
         List<Q5pojo> pojos = new ArrayList<>();
         String sql = "select suppliers.company_name as Company, products.product_name as Product, \n" +
             "products.unit_price as Price\n" +
             "from products\n" +
             "join suppliers\n" +
             "on products.supplier_id = suppliers.supplier_id\n" +
+            "where product_name = ?\n" +
             "group by company, product, price\n" +
-            "order by price desc, product asc, company asc where product_name = ?;";
+            "order by price desc, product asc, company asc;";
 
         try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
             statement.setString(1, name);

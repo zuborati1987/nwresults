@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("query2")
+@WebServlet("/query2")
 public class Q2servlet extends AbstractServlet{
 
     @Override

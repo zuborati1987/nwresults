@@ -17,21 +17,24 @@
 <table border="1">
     <tr>
         <th>Company</th>
-        <th>Number of products</th>
+        <th>Product</th>
+        <th>Price</th>
+
     </tr>
     <c:forEach var="result" items="${results}">
         <tr>
-            <td>${result.companyName}</td>
-            <td>${result.productNum}</td>
+            <td>${result.getCompany()}</td>
+            <td>${result.getProduct()}</td>
+            <td>${result.getPrice()}</td>
         </tr>
     </c:forEach>
 </table>
 </c:if>
 
 <h2>Search by name</h2>
-<form action="query2" method="post">    <select name="Company name" multiple>
+<form action="query5" method="post">    <select name="name" multiple>
         <c:forEach var="result" items="${results}">
-            <option value="<c:out value="${result.companyName}"/>">${result.companyName}</option>
+            <option value="<c:out value="${result.getCompany()}"/>">${result.getCompany()}</option>
         </c:forEach>
     </select>
     <input type="submit">

@@ -8,4 +8,12 @@ public class Q4pojo {
         this.companyName = companyName;
         this.orderIDs = orderIDs;
     }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public String getOrderIDs() {
+        return orderIDs;
+    }
 }

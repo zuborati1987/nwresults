@@ -6,4 +6,8 @@ public class Q3pojo {
     public Q3pojo(String companyName) {
         this.companyName = companyName;
     }
+
+    public String getCompanyName() {
+        return companyName;
+    }
 }

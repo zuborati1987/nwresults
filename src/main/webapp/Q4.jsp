@@ -21,17 +21,17 @@
     </tr>
     <c:forEach var="result" items="${results}">
         <tr>
-            <td>${result.companyName}</td>
-            <td>${result.orderIDs}</td>
+            <td>${result.getCompanyName()}</td>
+            <td>${result.getOrderIDs()}</td>
         </tr>
     </c:forEach>
 </table>
 </c:if>
 
 <h2>Search by name</h2>
-<form action="query4" method="post">    <select name="Company name" multiple>
+<form action="query4" method="post">    <select name="name" multiple>
         <c:forEach var="result" items="${results}">
-            <option value="<c:out value="${result.companyName}"/>">${result.companyName}</option>
+            <option value="<c:out value="${result.getCompanyName()}"/>">${result.getCompanyName()}</option>
         </c:forEach>
     </select>
     <input type="submit">

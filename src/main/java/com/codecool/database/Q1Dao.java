@@ -34,7 +34,8 @@ public class Q1Dao extends AbstractDao {
         String sql = "SELECT product_name, suppliers.company_name FROM products\n" +
             "inner join Suppliers \n" +
             "on Products.supplier_id = Suppliers.supplier_id\n" +
-            "order by products.product_name, suppliers.company_name asc where product_name = ?;";
+            "where product_name = ?\n" +
+            "order by products.product_name, suppliers.company_name asc;";
 
         try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
             statement.setString(1, name);

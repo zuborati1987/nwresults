@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("query1")
+@WebServlet("/query1")
 public class Q1servlet extends AbstractServlet{
 
     @Override
@@ -24,7 +24,7 @@ public class Q1servlet extends AbstractServlet{
             List<Q1pojo> results = q1service.getPojos();
 
             req.setAttribute("results", results);
-            req.getRequestDispatcher("q1.jsp").forward(req, resp);
+            req.getRequestDispatcher("Q1.jsp").forward(req, resp);
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
@@ -40,7 +40,7 @@ public class Q1servlet extends AbstractServlet{
             List<Q1pojo> results = q1service.getPojosByName(name);
 
             req.setAttribute("results", results);
-            req.getRequestDispatcher("q1.jsp").forward(req, resp);
+            req.getRequestDispatcher("Q1.jsp").forward(req, resp);
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }

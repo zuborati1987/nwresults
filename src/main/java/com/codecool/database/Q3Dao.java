@@ -37,9 +37,10 @@ public class Q3Dao extends AbstractDao {
             "FROM suppliers \n" +
             "JOIN products\n" +
             "     ON products.supplier_id = suppliers.supplier_id\n" +
+            "where company_name = ?\n" +
             "     group by company_name\n" +
             "     having count(products.supplier_id) > 4\n" +
-            "order by company_name; where company_name = ?;";
+            "order by company_name;";
 
         try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
             statement.setString(1, name);
